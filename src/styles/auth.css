@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+html, body {
+    height: 100%; /* Ocupa toda la altura de la ventana */
+    margin: 0;
+    padding: 0; /* Fuente general */
+}
+
+body {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #ffffff;
+}
+
+.Main {
+    display: flex;
+}
+
+.root{
+    min-width: 30dvw;
+    max-width: 30dvw;
+    display: flex;
+    justify-content: center;
+}
+
+
+.titulo {
+    text-align: center;
+    color: #185279;
+    font-size: 16px;
+    font-family: "Manrope", sans-serif;
+    margin-bottom: 5%;
+    padding: auto;
+}
+
+.login-container {
+    font-family: "Manrope", sans-serif;
+    box-shadow: 1px 1px 1px 1.5px rgb(175 175 175 / 35%);
+    width: 400px;
+    padding: 40px;
+    border-radius: 30px;
+    background-color: #f9f9f9;
+    display: grid;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.login-container form div {
+    margin-bottom: 15px;
+}
+
+.login-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.btn-general{
+    margin-bottom: 5%;
+    width: 60%;
+    padding: 10px;
+    background-color: #185279;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+    justify-self: center;
+}
+
+.btn-general:hover{
+     background-color: #ffd900;
+    color: #185279;
+    box-shadow: 2px 2px 0px 4px rgba(41,98,125,1);
+    transition: 0.1s;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-color: #cfcfcf;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.checkbox :checked{
+    background-color: #f8d304;
+}
+
+
+.login-container a {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+
+.div-button{
+    display: contents;
+}
+
+
+.login-google{
+    padding: 10px;
+    display: flex;
+    justify-self: center;
+    background-color: white;
+    width: 55%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(182, 182, 182);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+
+.div-recordarme{
+    display: flex;
+    align-items: baseline;
+}
+
+.div-btn{
+ display: grid;
+}
+
+.Reigster {
+   display: grid;
+}
+
+.Reigster p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: red;
+}
+
+.Main-pot{
+    min-width: 100%;
+}
+
+.validation-main{
+    margin-bottom: 5%;
+    background-color: #f9f9f9;
+    box-shadow: 1px 1px 1px 1.5px rgb(175 175 175 / 35%);
+    border-radius: 30px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.validation-main div{
+    display: flex;
+    align-items: baseline;
+    font-size: 14px;
+    margin-bottom: 1%;
+}
+
+.valid-pass{
+    color: #2a910b;
+}
+
+.no-validpass{
+    color: #cf3333;
+}
+
+.validation-main div li{
+    list-style: none;
+    margin-left: 5px;
+}
