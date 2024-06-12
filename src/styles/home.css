@@ -32,7 +32,7 @@ body {
   }
   
   .search-engine input {
-    
+    font-size: 16px;
     border: none;
     border-radius: 4px;
     padding: 5px;
@@ -83,7 +83,7 @@ body {
   }
 
   .user-email{
-    color: #f0f0f0;
+    color: #eeeeee;
     font-weight: bold;
     cursor: pointer;
   }
@@ -92,10 +92,57 @@ body {
     display: flex;
     gap: 20px;
     font-size: 20px;
+    color: #eeeeee;
+    transition: 0.05s;
   }
 
   .main-carrusel{
     width: 100px;
   }
+
+  .s-u{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .user-shop i:hover{
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.05s;
+  }
   
+  .icon-container {
+    position: relative;
+    margin-left: 20px;
+  }
   
+  .dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1000;
+  }
+  .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -8px; /* Adjust to position the arrow */
+    left: 1px; /* Adjust to position the arrow */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    z-index: 1001;
+  }
+  
+  .dropdown h4 {
+    color: #185279;
+    margin: 0;
+    padding: 0;
+  }

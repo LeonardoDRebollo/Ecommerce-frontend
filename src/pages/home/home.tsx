@@ -1,6 +1,17 @@
+import React, { useState, ChangeEvent, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../../styles/home.css';
 const Home = () => {
+
+
+  const [MostrarFavoritos, setMostrarFavorito] = useState(false);
+  const [MostrarCarrito, setMostrarCarrito] = useState(false);
+  const [MostrarNotificaciones, setMostrarNotificaciones] = useState(false);
+
+
+
+
+
   return (
     <>
     <div  className='Main-home'>
@@ -8,15 +19,63 @@ const Home = () => {
             <div className='logo'>
             <h3>FITZMARK</h3>
             </div>
+
+            <div className='s-u'>
             <div className='search-engine'>
               <button><i className="fa-solid fa-magnifying-glass"></i></button>
               <input placeholder='Buscar...'/>
+
+              
             </div>
             <div className='user-shop'>
 
+            <div
+              className='icon-container'
+              onMouseEnter={() => setMostrarFavorito(true)}
+              onMouseLeave={() => setMostrarFavorito(false)}
+            >
               <i className="fa-solid fa-heart"></i>
-              <i className="fa-solid fa-cart-shopping"></i>
+              {MostrarFavoritos && (
+                <div className='dropdown'>
+                  <h4>Favorites</h4>
+                  {/* Aquí puedes agregar más contenido del dropdown */}
+                </div>
+              )}
             </div>
+
+            <div
+              className='icon-container'
+              onMouseEnter={() => setMostrarCarrito(true)}
+              onMouseLeave={() => setMostrarCarrito(false)}
+            >
+              <i className="fa-solid fa-cart-shopping"></i>
+              {MostrarCarrito && (
+                <div className='dropdown'>
+                  <h4>Carrito</h4>
+                  <p></p>
+                  {/* Aquí puedes agregar más contenido del dropdown */}
+                </div>
+              )}
+            </div>
+
+            <div
+              className='icon-container'
+              onMouseEnter={() => setMostrarNotificaciones(true)}
+              onMouseLeave={() => setMostrarNotificaciones(false)}
+            >
+              <i className="fa-solid fa-bell"></i>
+              {MostrarNotificaciones && (
+                <div className='dropdown'>
+                  <h4>Notificaciones</h4>
+                  {/* Aquí puedes agregar más contenido del dropdown */}
+                </div>
+              )}
+            </div>
+            </div>
+
+
+            </div>
+
             <Link to={'/login'}>
             <div className='user-dropdown'>
                 <label className='user-email'>leonardod.rebollo@gmail.com</label>
