@@ -110,7 +110,7 @@ const Regs: React.FC<RegsProps> = ({ state, email, setEmail, password, setPasswo
     );
   } else {
     return (
-      <div className='Reigster'>
+      <div className='Register'>
         <h1>Ingresa tu nueva contraseña</h1>
         <div>
           <input
@@ -208,7 +208,7 @@ if (state === 1) {
       
 
 
- <div>
+ <div className='root'>
       {loading ? (
         <LoadingSpinner />
       ) : (
@@ -229,7 +229,7 @@ if (state === 1) {
           </div>
         </div>
         <div className='link-regist'>
-           <Link to={'/'}>¡Ya estoy registrado!</Link>  
+           <Link to={'/login'}>¡Ya estoy registrado!</Link>  
         </div>
        
       </div>

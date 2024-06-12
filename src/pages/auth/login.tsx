@@ -2,12 +2,16 @@ import '../../styles/auth.css';
 import { Link } from 'react-router-dom';
 const Login = () => {
   return (
+    <div className='root'>
+
+   
     <div  className='Main'>
         
   
       <div className="login-container">
       <div className='titulo'>
-        <h1>FITZMARK</h1>
+        <Link to={'/'}><h1>FITZMARK</h1></Link>
+        
         </div>
         <div>
           <input className='input' type="text" id="username" name="username" placeholder='correo electronico'/>
@@ -33,6 +37,7 @@ const Login = () => {
         
         <Link to="/registro">¿No tienes una cuenta?¡Registrate gratis ya mismo!</Link>
       </div>
+    </div>
     </div>
   );
 };
