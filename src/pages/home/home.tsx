@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "../../styles/home.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/navbar-components/navbar";
 
 
 interface Productos {

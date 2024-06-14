@@ -1,6 +1,7 @@
 import React, { useState, ChangeEvent, useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../styles/components.css'; // Estilos para el spinner
+import '../../styles/components.css'; // Estilos para el spinner
+import UserDropdown from "./user-dropdown";
 
 
 
@@ -136,16 +137,7 @@ const Navbar = () => {
       </div>
     </div>
 
-    <Link to={"/login"}>
-      <div className="user-dropdown">
-        <label className="user-email">leonardod.rebollo@gmail.com</label>
-        <img
-          src="https://storage.googleapis.com/wnr-ai/uploads/chat/ai/avatar/de1ee35faea6c14048728cb1d0739d12/v512_de1ee35faea6c14048728cb1d0739d12.png"
-          width="40"
-          height="40"
-        />
-      </div>
-    </Link>
+    <UserDropdown/>
   </nav>
   );
 };

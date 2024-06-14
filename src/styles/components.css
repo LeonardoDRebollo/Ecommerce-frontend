@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+
 .loader-container {
     display: flex;
     justify-content: center;
@@ -195,3 +198,55 @@
   }
 
     /* ESTILOS DEL NAVBAR Y SUS COMPONENTES */
+
+
+    /* DROPDOWN USUARIO */
+
+
+    .user-dropdown {
+      position: relative;
+      display: inline-block;
+      margin-right: 20px; /* Ajusta el margen según necesites */
+    }
+    
+    .user-info {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    
+    .user-email {
+      margin-right: 10px;
+    }
+    
+    .user-avatar {
+      border-radius: 50%;
+    }
+    
+    .dropdown-content {
+      position: absolute;
+      top: 40px; /* Ajusta la distancia desde el borde superior del dropdown */
+      right: 0;
+      background-color: #185279;
+      min-width: 180px;
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 0px 0px 20px 20px;
+    }
+    
+    .dropdown-option {
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 14px;
+
+    }
+    
+    .dropdown-option:hover {
+      color: #ffd900;
+    }
+
+
+    
+
+
+       /* DROPDOWN USUARIO */
