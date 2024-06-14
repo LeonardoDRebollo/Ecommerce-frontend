@@ -19,3 +19,179 @@
     100% { transform: rotate(360deg); }
   }
   
+
+  /* ESTILOS DEL NAVBAR Y SUS COMPONENTES */
+
+  .logo h3 {
+    margin: 0;
+  }
+  
+  .search-engine {
+    padding: 5px;
+    background-color: #ffff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-engine input {
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    margin-left: 10px;
+    min-width: 30dvw;
+  }
+  
+  .search-engine button {
+    background: none;
+    border: none;
+    color: rgb(36, 36, 36);
+    cursor: pointer;
+  }
+  
+  .search-engine button i {
+    font-size: 1.2em;
+  }
+  
+  .body-page {
+    display: grid;
+    align-items: center;
+    height: 91dvh; /* Adjust height as needed */
+    background-color: #f0f0f0;
+    
+  }
+
+  
+  .body-page input {
+    width: 80%;
+    max-width: 600px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .user-dropdown{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  a{
+    text-decoration: none;
+
+  }
+
+  .user-email{
+    color: #eeeeee;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .user-shop{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    color: #eeeeee;
+    transition: 0.05s;
+  }
+
+  .main-carrusel{
+    width: 100px;
+  }
+
+  .s-u{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .user-shop i:hover{
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: 0.05s;
+  }
+  
+  .icon-container {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    min-width: 14dvw;
+    background-color:rgb(210, 210, 210);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 0px 0px 10px 0px;
+    z-index: 1000;
+  }
+  .dropdown::before {
+    content: "";
+    position: absolute;
+    top: -8px; /* Adjust to position the arrow */
+    left: 1px; /* Adjust to position the arrow */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #ffffff;
+    z-index: 1001;
+  }
+  
+  .dropdown h4 {
+    color: #185279;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    font-family: "Manrope", sans-serif;
+  }
+
+  .dropdown-title {
+    background-color: #ffffff;
+    border-radius: 4px 4px 0px 0px;
+  }
+  .dropdown-body {
+    display: grid;
+     gap: 10px;
+  }
+
+  .Notificacion{
+    font-family: "Manrope", sans-serif;
+    background-color:rgb(230, 230, 230);
+    
+    color: #185279;
+    font-size: 12px;
+    padding: 3px;
+  }
+  .Notificacion:hover{
+    cursor: pointer;
+    background-color:rgb(215, 215, 215);
+  }
+  .title-div-not{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   }
+
+   .title-div-not i{
+    font-size: 18px;
+    color: #494949;
+    margin-right: 10px;
+   }
+  
+  .notificacion-title{
+    font-family: "Manrope", sans-serif;
+    color: #185279;
+    font-weight: bold;
+  }
+
+  .notificacion-desc{
+    font-family: "Manrope", sans-serif;
+    color: #353535;
+  }
+
+    /* ESTILOS DEL NAVBAR Y SUS COMPONENTES */

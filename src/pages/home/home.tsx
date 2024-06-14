@@ -1,98 +1,179 @@
-import React, { useState, ChangeEvent, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import '../../styles/home.css';
+import React, { useState, ChangeEvent, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "../../styles/home.css";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Navbar from "../../components/navbar";
+
+
+interface Productos {
+  imagen: string;
+  nombre_producto: string;
+  precio: number;
+}
+
+
+
+const recibirProductos = (): Productos[] => {
+  return [
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://m.media-amazon.com/images/I/717njqTYEJL._AC_UF894,1000_QL80_.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://i5.walmartimages.com.mx/mg/gm/1p/images/product-images/img_large/00075376489831l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+    {
+      imagen: "https://cdn1.coppel.com/images/catalog/pm/2050453-1.jpg",
+      nombre_producto: "Laptop LENOVO 14'5 i5 12 MESE SIN INTERESES",
+      precio: 5450,
+    },
+  ];
+};
+
 const Home = () => {
 
-
-  const [MostrarFavoritos, setMostrarFavorito] = useState(false);
-  const [MostrarCarrito, setMostrarCarrito] = useState(false);
-  const [MostrarNotificaciones, setMostrarNotificaciones] = useState(false);
+  const [Productos, setProductos] = useState<Productos[]>([]);
 
 
+  useEffect(() => {
+    const productosRecibidos = recibirProductos();
 
+    setProductos(productosRecibidos);
+  }, []);
 
 
   return (
     <>
-    <div  className='Main-home'>
-        <nav>
-            <div className='logo'>
-            <h3>FITZMARK</h3>
+      <div className="Main-home">
+         <Navbar/>
+      </div>
+      <div className="body-page">
+        <section className="main-carrusel"></section>
+        <div className="Ofertas-dia">
+        <h3>OFERTAS DEL DIA</h3>
+        <Carousel
+          additionalTransfrom={0}
+          arrows
+          autoPlaySpeed={3000}
+          centerMode={false}
+          className=""
+          containerClass="container-with-dots"
+          dotListClass=""
+          draggable
+          focusOnSelect={false}
+          itemClass=""
+          keyBoardControl
+          minimumTouchDrag={80}
+          pauseOnHover
+          renderArrowsWhenDisabled={false}
+          renderButtonGroupOutside={false}
+          renderDotsOutside={false}
+          responsive={{
+            desktop: {
+              breakpoint: {
+                max: 3000,
+                min: 1024,
+              },
+              items: 6,
+              partialVisibilityGutter: 40,
+            },
+            mobile: {
+              breakpoint: {
+                max: 464,
+                min: 0,
+              },
+              items: 1,
+              partialVisibilityGutter: 30,
+            },
+            tablet: {
+              breakpoint: {
+                max: 1024,
+                min: 464,
+              },
+              items: 2,
+              partialVisibilityGutter: 30,
+            },
+          }}
+          rewind={false}
+          rewindWithAnimation={false}
+          rtl={false}
+          shouldResetAutoplay
+          showDots={false}
+          sliderClass=""
+          slidesToSlide={2}
+          swipeable
+        >
+          {Productos.map((producto, index) => (
+            <div className="product-card" key={index}>
+              <div className="product-image">
+                <img src={producto.imagen} alt={producto.nombre_producto} />
+              </div>
+              <div className="product-body">
+                <h4>{producto.nombre_producto}</h4>
+                <label>{producto.precio} MX</label>
+              </div>
             </div>
-
-            <div className='s-u'>
-            <div className='search-engine'>
-              <button><i className="fa-solid fa-magnifying-glass"></i></button>
-              <input placeholder='Buscar...'/>
-
-              
-            </div>
-            <div className='user-shop'>
-
-            <div
-              className='icon-container'
-              onMouseEnter={() => setMostrarFavorito(true)}
-              onMouseLeave={() => setMostrarFavorito(false)}
-            >
-              <i className="fa-solid fa-heart"></i>
-              {MostrarFavoritos && (
-                <div className='dropdown'>
-                  <h4>Favorites</h4>
-                  {/* Aquí puedes agregar más contenido del dropdown */}
-                </div>
-              )}
-            </div>
-
-            <div
-              className='icon-container'
-              onMouseEnter={() => setMostrarCarrito(true)}
-              onMouseLeave={() => setMostrarCarrito(false)}
-            >
-              <i className="fa-solid fa-cart-shopping"></i>
-              {MostrarCarrito && (
-                <div className='dropdown'>
-                  <h4>Carrito</h4>
-                  <p></p>
-                  {/* Aquí puedes agregar más contenido del dropdown */}
-                </div>
-              )}
-            </div>
-
-            <div
-              className='icon-container'
-              onMouseEnter={() => setMostrarNotificaciones(true)}
-              onMouseLeave={() => setMostrarNotificaciones(false)}
-            >
-              <i className="fa-solid fa-bell"></i>
-              {MostrarNotificaciones && (
-                <div className='dropdown'>
-                  <h4>Notificaciones</h4>
-                  {/* Aquí puedes agregar más contenido del dropdown */}
-                </div>
-              )}
-            </div>
-            </div>
-
-
-            </div>
-
-            <Link to={'/login'}>
-            <div className='user-dropdown'>
-                <label className='user-email'>leonardod.rebollo@gmail.com</label>
-                <img src="https://storage.googleapis.com/wnr-ai/uploads/chat/ai/avatar/de1ee35faea6c14048728cb1d0739d12/v512_de1ee35faea6c14048728cb1d0739d12.png" width="40" height="40"/>
-            </div>
-            </Link>
-        </nav>
-    </div>
-        <div className='body-page'>
-            <section className='main-carrusel'>
-          
-            </section>
-            
+          ))}
+        </Carousel>
         </div>
-  </>
+        
+      </div>
+    </>
   );
 };
 
 export default Home;
-
