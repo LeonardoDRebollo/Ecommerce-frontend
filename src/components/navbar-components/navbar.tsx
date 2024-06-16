@@ -60,7 +60,10 @@ const Navbar = () => {
   return (
     <nav>
     <div className="logo">
+      <Link to={'/'}>
       <h3>FITZMARK</h3>
+      </Link>
+      
     </div>
 
     <div className="s-u">
@@ -101,39 +104,41 @@ const Navbar = () => {
         </div>
 
         <div
-          className="icon-container"
-          onMouseEnter={() => setMostrarNotificaciones(true)}
-          onMouseLeave={() => setMostrarNotificaciones(false)}
-        >
-          <i className="fa-solid fa-bell"></i>
-          {MostrarNotificaciones && (
-            <div className="dropdown">
-              <div className="dropdown-title">
-                <h4>Notificaciones</h4>
-              </div>
+      className="icon-container"
+      onMouseEnter={() => setMostrarNotificaciones(true)}
+      onMouseLeave={() => setMostrarNotificaciones(false)}
+    >
+      <i className="fa-solid fa-bell notification-icon"></i>
+      {notificaciones.length > 0 && <div className="notification-dot"></div>}
+      {MostrarNotificaciones && (
+        <div className="dropdown">
+          <div className="dropdown-title">
+            <h4>Notificaciones</h4>
+          </div>
 
-              <div className="dropdown-body">
-                {notificaciones.map((notification, index) => (
-                  <div className="Notificacion" key={index}>
-                    <div className="title-div-not">
-                      <p className="notificacion-title">
-                        {notification.titulo}
-                      </p>
-                      <i className="fa-solid fa-xmark"></i>
-                    </div>
+          <div className="dropdown-body">
+            {notificaciones.length === 0 && <p className="no-notification">No tienes nuevas notificaciones</p>}
+            {notificaciones.map((notification, index) => (
+              <div className="Notificacion" key={index}>
+                <div className="title-div-not">
+                  <p className="notificacion-title">
+                    {notification.titulo}
+                  </p>
+                  <i className="fa-solid fa-xmark"></i>
+                </div>
 
-                    <p className="notificacion-desc">
-                      {notification.notificacion}
-                    </p>
-                    <p className="notificacion-date">
-                      {notification.fecha_notificacion.toString()}
-                    </p>
-                  </div>
-                ))}
+                <p className="notificacion-desc">
+                  {notification.notificacion}
+                </p>
+                <p className="notificacion-date">
+                  {notification.fecha_notificacion.toString()}
+                </p>
               </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
+      )}
+    </div>
       </div>
     </div>
 
